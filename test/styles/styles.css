@@ -1,0 +1,32 @@
+body{
+  font-family: Helvetica;
+  font-size: 15px;
+}
+
+#main{
+  border: solid 1px black;
+  padding: 10px;
+  margin: 50px auto;
+  width: 500px;
+}
+#main .container {
+  border: solid 2px #999;
+  background-color: #C3E4ED;
+  height: 300px;
+  margin: 0 auto;
+  padding: 3px;
+  position: relative;
+  width: 450px;
+}
+
+#main .container ol {
+  list-style-type: none;
+  position: relative;
+  overflow: hidden;
+}
+
+#main .container ol li {
+  border: solid 1px black;
+  float: left;
+  margin: 0 5px;
+}

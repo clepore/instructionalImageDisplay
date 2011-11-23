@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>List Displays</title>
+  <meta name="generator" content="TextMate http://macromates.com/">
+  <meta name="author" content="Christopher Lepore">
+  <link href="styles/styles.css" rel="stylesheet" type="text/css">
+  <!-- Date: 2011-11-21 -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  <script src="../listDisplay.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript" charset="utf-8">
+    $(function() {
+      $('.container').listDisplay({
+        container: $('.container'),
+        images: [
+          {
+            src: 'images/instruction1.jpg',
+            position: {
+              top: 40,
+              right: 0,
+              bottom: null,
+              left: 40
+            }
+          },
+          {
+            src: 'images/instruction2.jpg',
+            position: {
+              top: 40,
+              right: null,
+              bottom: null,
+              left: 135
+            }
+          }
+        ]
+      });
+    });
+  </script>
+</head>
+<body>
+  <div id='main'>
+    <h1>This is a test</h1>
+    <p>
+      It will show you how images can be displayed and then clicked to show other images.
+    </p>
+    <div class='container'>
+      <ol>
+        <li>Menu Item 1</li>
+        <li>Menu Item 2</li>
+      </ol>
+    </div>
+  </div>
+</body>
+</html>
