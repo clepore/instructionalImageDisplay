@@ -6,7 +6,6 @@
 * A plugin to dynamically show a series of images with specific positioning
 *
 * @param options            An optional options object.
-* @param options.container  The container holding the images.
 * @param options.images     Array of objects to be positioned and shown (see example)
 *
 *
@@ -23,7 +22,6 @@
         // Set options to be accesible across functions
         self.data('listDisplay', { 
           options: options ,
-          container: $(options.container),
           currentIndex: 0
         });
         
@@ -38,12 +36,12 @@
        data = self.data('listDisplay');
        
        // Create dynamic
-       data.container.append($('<img class="dynamic" src="" />'));
-       data.dynamic = data.container.find('.dynamic');
+       self.append($('<img class="dynamic" src="" />'));
+       data.dynamic = self.find('.dynamic');
        data.dynamic.css('position', 'absolute');
        
        // Set click
-       data.container.bind('click', function() {
+       self.bind('click', function() {
          functions.changeObject.call(self);
        });
        
@@ -81,7 +79,6 @@
   };
     
   jQuery.fn.listDisplay.defaults = {
-    container: $(),
     images: []
   };
 })(jQuery);
