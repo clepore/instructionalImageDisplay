@@ -5,9 +5,9 @@
 *
 * A plugin to dynamically show a series of images with specific positioning
 *
-* @param options            An optional options object.
-* @param options.images     Array of objects to be positioned and shown (see example)
-*
+* @param options          An optional options object.
+* @param options.images   Array of objects to be positioned and shown (see example)
+* @param options.callBack A callback function to be called when the images are finished
 *
 **/
 
@@ -56,6 +56,7 @@
        // Hide conatiner
        if (data.currentIndex == data.options.images.length) {
          data.dynamic.remove();
+         data.options.callBack.call(self);
        } else {
          // Set the attributes of the next image
          data.dynamic.attr('src', data.options.images[data.currentIndex].src);
@@ -79,6 +80,7 @@
   };
     
   jQuery.fn.listDisplay.defaults = {
-    images: []
+    images: [],
+    callBack: function(){ }
   };
 })(jQuery);
